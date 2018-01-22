@@ -1,0 +1,33 @@
+{
+    "name": "larapages/pages",
+    "description": "A Laravel 5 Page model, migration and controller",
+    "license": "MIT",
+    "keywords": [ "php", "laravel", "pages", "larapages" ],
+    "homepage": "http://www.larapages.nl",
+    "authors": [
+        {
+            "name": "Nick de Kruijk",
+            "email": "git@larapages.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "^5.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaraPages\\Pages\\ServiceProvider"
+            ],
+            "aliases": {
+                "Page": "LaraPages\\Pages\\Facade"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "LaraPages\\Pages\\": "src/"
+        }
+    }
+}
