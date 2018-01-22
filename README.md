@@ -1,5 +1,5 @@
 # LaraPages/Pages
-A Laravel 5 Page model, migration and controller. It can be used as a foundation for a website with navigation and a footer. A basic view is also included.
+A Laravel 5.5+ Page model, migration and controller. It can be used as a foundation for a website with navigation and a footer. A basic view is also included.
 
 ## Installation
 To install the package use

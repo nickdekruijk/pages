@@ -1,6 +1,6 @@
 {
     "name": "larapages/pages",
-    "description": "A Laravel 5 Page model, migration and controller",
+    "description": "A Laravel 5.5+ Page model, migration and controller.",
     "license": "MIT",
     "keywords": [ "php", "laravel", "pages", "larapages" ],
     "homepage": "http://www.larapages.nl",
