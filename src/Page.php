@@ -14,8 +14,13 @@ class Page extends Model
         'date' => 'date',
     ];
 
+    // If slug is empty create slug based on title
     public function getSlugAttribute($value)
     {
+        // If slug is / then it's the 'root' so return empty slug
+        if ($value == '/') {
+            return '';
+        }
         return $value ?: str_slug($this->title);
     }
 }
