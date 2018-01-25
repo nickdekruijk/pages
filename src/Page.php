@@ -8,14 +8,19 @@ class Page extends Model
 {
 
     protected $casts = [
-//         'active' => 'boolean',
-//         'menuitem' => 'boolean',
-//         'home' => 'boolean',
+        'active' => 'boolean',
+        'menuitem' => 'boolean',
+        'home' => 'boolean',
         'date' => 'date',
     ];
 
     public function routes()
     {
         PageController::routes();
+    }
+
+    public function getSlugAttribute($value)
+    {
+        return $value ?: str_slug($this->title);
     }
 }
