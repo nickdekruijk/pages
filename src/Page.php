@@ -14,11 +14,6 @@ class Page extends Model
         'date' => 'date',
     ];
 
-    public function routes()
-    {
-        PageController::routes();
-    }
-
     public function getSlugAttribute($value)
     {
         return $value ?: str_slug($this->title);
