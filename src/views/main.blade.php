@@ -38,10 +38,10 @@
             @media (max-width: 750px) {
             	.nav .nav0 {position:fixed;top:0px;bottom:0;right:0;width:200px;transform:translateX(200px);transition:transform .4s;background-color:#eee}
             	.nav .nav0 > LI {display:block}
-            	.nav UL UL {position:relative;display:block;background-color:inherit}
+            	.nav UL UL {position:relative;display:block;background-color:transparent}
             	.nav LI LI {padding-left:20px;font-size:0.95em}
             	.nav-burger {display:block}
-                .nav LI:hover, .nav-logo:hover {background-color:inherit}
+                .nav LI:hover, .nav-logo:hover {background-color:transparent}
                 #nav-toggle:checked ~ .nav .nav0 {display:block;transform:translateX(0)}
         	}
         </style>
