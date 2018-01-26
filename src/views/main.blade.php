@@ -35,6 +35,9 @@
         	.bigimg {height:33.33333vw;background-position:center center;background-size:cover}
         	.footer a {color:#fff}
         	.footer a:hover {text-decoration:underline}
+        	h1 {font-size:2em;font-weight:100;margin:0.75em 0 0}
+        	h2 {font-size:1.5em;font-weight:100;margin:0.75em 0 0}
+        	p {margin:0.5em 0}
             @media (max-width: 750px) {
             	.nav .nav0 {position:fixed;top:0px;bottom:0;right:0;width:200px;transform:translateX(200px);transition:transform .4s;background-color:#eee}
             	.nav .nav0 > LI {display:block}
