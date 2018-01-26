@@ -83,7 +83,7 @@ class PageController extends Controller
 
         if (!$hidden) $this->nav .= '<ul class="nav' . $depth . '">';
         foreach($this->tree[$parent] as $n => $page) {
-            $hide = $page->hidden || $hidden;
+            $hide = !$page->menuitem || $hidden;
             // Set current if it's the one but only if $activeParent is true to prevent page with same slug from different parent
             if (((empty($segments[$depth]) && $depth==0 && $n==0) || $segments[$depth] == $page->slug) && $activeParent) {
                 $this->current = $page;
