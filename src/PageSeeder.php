@@ -3,6 +3,7 @@
 namespace LaraPages\Pages;
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class PageSeeder extends Seeder
 {
@@ -13,16 +14,24 @@ class PageSeeder extends Seeder
      */
     public function run()
     {
+        function lorem($faker, $p = null) {
+            $l = '';
+            if (!$p) $p = mt_rand(3,5);
+            for($i=1; $i<=$p; $i++)
+                $l.='<p>'.$faker->paragraph(mt_rand(4,10)).'</p>';
+            return $l;
+        }
+        $faker = Faker::create();
         Page::truncate();
-        Page::create([ 'title' => 'Home', 'slug' => '/' ]);
-        Page::create([ 'title' => 'About']);
-        $products = Page::create([ 'title' => 'Products']);
-        Page::create([ 'parent' => $products->id, 'title' => 'Product A']);
-        $b = Page::create([ 'parent' => $products->id, 'title' => 'Product B']);
-        Page::create([ 'parent' => $b->id, 'title' => 'Product B.1', 'menuitem' => false]);
-        Page::create([ 'parent' => $b->id, 'title' => 'Product B.2', 'menuitem' => false, 'active' => false]);
-        Page::create([ 'parent' => $b->id, 'title' => 'Product B.3', 'menuitem' => false, 'home' => true]);
-        Page::create([ 'parent' => $products->id, 'title' => 'Product C']);
-        Page::create([ 'title' => 'Contact']);
+        Page::create([ 'body' => lorem($faker), 'title' => 'Home', 'slug' => '/']);
+        Page::create([ 'body' => lorem($faker), 'title' => 'About']);
+        $products = Page::create([ 'body' => lorem($faker), 'title' => 'Products']);
+        Page::create([ 'body' => lorem($faker), 'parent' => $products->id, 'title' => 'Product A']);
+        $b = Page::create([ 'body' => lorem($faker), 'parent' => $products->id, 'title' => 'Product B']);
+        Page::create([ 'body' => lorem($faker), 'parent' => $b->id, 'title' => 'Product B.1', 'menuitem' => false]);
+        Page::create([ 'body' => lorem($faker), 'parent' => $b->id, 'title' => 'Product B.2', 'menuitem' => false, 'active' => false]);
+        Page::create([ 'body' => lorem($faker), 'parent' => $b->id, 'title' => 'Product B.3', 'menuitem' => false, 'home' => true]);
+        Page::create([ 'body' => lorem($faker), 'parent' => $products->id, 'title' => 'Product C']);
+        Page::create([ 'body' => lorem($faker), 'title' => 'Contact']);
     }
 }
