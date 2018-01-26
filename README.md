@@ -1,3 +1,9 @@
+[![Latest Stable Version](https://poser.pugx.org/larapages/pages/v/stable)](https://packagist.org/packages/larapages/pages)
+[![Latest Unstable Version](https://poser.pugx.org/larapages/pages/v/unstable)](https://packagist.org/packages/larapages/pages)
+[![Monthly Downloads](https://poser.pugx.org/larapages/pages/d/monthly)](https://packagist.org/packages/larapages/pages)
+[![Total Downloads](https://poser.pugx.org/larapages/pages/downloads)](https://packagist.org/packages/larapages/pages)
+[![License](https://poser.pugx.org/larapages/pages/license)](https://packagist.org/packages/larapages/pages)
+
 # LaraPages/Pages
 A Laravel 5.5+ Page model, migration and controller. It can be used as a foundation for a website with navigation and a footer. A basic view is also included.
 
