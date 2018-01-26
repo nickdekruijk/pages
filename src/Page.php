@@ -23,4 +23,10 @@ class Page extends Model
         }
         return $value ?: str_slug($this->title);
     }
+
+    // If empty set html_title based on title and APP_NAME
+    public function getHtmlTitleAttribute($value)
+    {
+        return $value ?: $this->title . ' - ' . env('APP_NAME');
+    }
 }
