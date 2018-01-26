@@ -13,7 +13,7 @@
         	* {box-sizing:border-box}
         	.content {min-height:calc(100vh - 100px)}
         	.container {position:relative}
-        	.footer .container,
+        	.footer .container {padding:0 2px}
         	.article {padding:1px 2%}
         	.footer {line-height:100px;background-color:#334;color:rgba(255,255,255,0.8)}
         	A {text-decoration:none;color:inherit}
