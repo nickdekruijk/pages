@@ -9,9 +9,9 @@
     	<title>{{ @$page->html_title }}</title>
     	<style>
         	body {margin:0;font-family:sans-serif;color:#333;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-font-smoothing:grayscale;-moz-osx-font-smoothing:grayscale}
-        	.nav {position:fixed;left:0;right:0;top:0;background-color:rgba(127,127,127,0.2);line-height:50px;white-space:nowrap;z-index:1000}
+        	.nav {position:fixed;left:0;right:0;top:0;background-color:#fff;line-height:50px;white-space:nowrap;z-index:1000;box-shadow:rgba(0,0,0,0.5) 0 0 5px}
         	* {box-sizing:border-box}
-        	.content {min-height:calc(100vh - 100px)}
+        	.content {min-height:calc(100vh - 100px);padding-top:50px}
         	.container {position:relative}
         	.footer .container {padding:0 20px}
         	.article {padding:1px 20px}
@@ -24,7 +24,7 @@
         	#nav-toggle {display:none}
         	.nav UL {display:block;margin:0;padding:0}
         	.nav UL > LI {display:inline-block;margin:0;padding:0px 20px}
-        	.nav UL UL {display:none;position:absolute;background-color:rgba(127,127,127,0.2);margin:0 -20px;line-height:2.5em}
+        	.nav UL UL {display:none;position:absolute;background-color:#fff;margin:0 -20px;line-height:2.5em;box-shadow:rgba(0,0,0,0.3) 0 2px 3px}
         	.nav LI:hover > UL {display:block}
         	.nav LI LI {display:block}
         	.nav LI.active > A {color:#178}
@@ -42,7 +42,7 @@
             @media (max-width: 750px) {
             	.nav .nav0 {position:fixed;top:0px;bottom:0;right:0;width:200px;transform:translateX(200px);transition:transform .4s;background-color:#eee}
             	.nav .nav0 > LI {display:block}
-            	.nav UL UL {position:relative;display:block;background-color:transparent}
+            	.nav UL UL {position:relative;display:block;background-color:transparent;box-shadow:none;padding-left:15px}
             	.nav LI LI {padding-left:20px;font-size:0.95em}
             	.nav-burger {display:block}
                 .nav LI:hover, .nav-logo:hover {background-color:transparent}
