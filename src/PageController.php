@@ -145,7 +145,7 @@ class PageController extends Controller
         }
 
         if (!$this->current->view) {
-            !$this->current->view = 'pages::page';
+            !$this->current->view = config('pages.default_view', 'pages::page');
         }
 //         if (!View::exists($this->current->view)) $this->current->view=$this->current->children()->activeSorted()->count()?'pages':'detail';
 		return view($this->current->view, ['page' => $this->current, 'navigationHtml' => $this->nav, 'PageController' => $this]);
