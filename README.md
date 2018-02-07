@@ -12,6 +12,13 @@ To install the package use
 
 `composer require larapages/pages`
 
+## Configuration
+After installing for the first time publish the config file with 
+
+`php artisan vendor:publish --tag=config --provider="LaraPages\Pages\ServiceProvider"` 
+
+A default config file called `pages.php` will be available in your Laravel `app/config` folder. See this file for more details.
+
 ### Run Migration
 You need to run `php artisan migrate` to create the pages table.
 
