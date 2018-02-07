@@ -23,7 +23,7 @@ class PageSeeder extends Seeder
         }
         $faker = Faker::create();
         Page::truncate();
-        Page::create([ 'body' => lorem($faker), 'title' => 'Home', 'slug' => '/']);
+        Page::create([ 'body' => lorem($faker), 'title' => 'Home', 'slug' => '/', 'background' => 'photos/1024x768.jpg|Background caption', 'pictures' => "photos/1024x768.jpg|Beach|Test\nphotos/402809_ojo.jpg|Eye\nphotos/788639_67311638.jpg|Leafs\nphotos/Road.jpg"]);
         Page::create([ 'body' => lorem($faker), 'title' => 'About']);
         $products = Page::create([ 'body' => lorem($faker), 'title' => 'Products']);
         Page::create([ 'body' => lorem($faker), 'parent' => $products->id, 'title' => 'Product A']);
