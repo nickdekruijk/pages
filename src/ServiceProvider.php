@@ -17,7 +17,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             __DIR__.'/config.php' => config_path('pages.php'),
         ], 'config');
 
-        if (config('settings.migration')) {
+        if (config('pages.migration')) {
             $this->loadMigrationsFrom(__DIR__.'/migrations/');
         }
     }
