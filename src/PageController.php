@@ -65,12 +65,13 @@ class PageController extends Controller
         return $this->baseUrl;
     }
 
-    public static function navigation()
+    public function navigation()
     {
-        $controller = new PageController;
-        $controller->getTree();
-        $controller->walk();
-        return $controller->nav;
+        if (!$this->nav) {
+            $this->getTree();
+            $this->walk();
+        }
+        return $this->nav;
     }
 
     // The walk() function is used by the route() method to parse the pages tree array
@@ -148,6 +149,6 @@ class PageController extends Controller
             !$this->current->view = config('pages.default_view', 'pages::page');
         }
 //         if (!View::exists($this->current->view)) $this->current->view=$this->current->children()->activeSorted()->count()?'pages':'detail';
-		return view($this->current->view, ['page' => $this->current, 'navigationHtml' => $this->nav, 'PageController' => $this]);
+		return view($this->current->view, ['page' => $this->current, 'PageController' => $this]);
     }
 }

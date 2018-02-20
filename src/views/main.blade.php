@@ -60,7 +60,7 @@
                 <span></span>
             </label>
             <div class="mw-1140">
-            {!! $navigationHtml !!}
+            {!! isset($PageController) ? $PageController->nav : Page::navigation() !!}
             </div>
         </nav>
         <section class="content">
