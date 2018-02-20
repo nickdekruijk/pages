@@ -64,7 +64,9 @@
             </div>
         </nav>
         <section class="content">
+            @if (!empty($page->images))
             <div class="bigimg" style="background-image:url('{{ asset('media/'.$page->image()) }}')"></div>
+            @endif
             <div class="container mw-1140">
                 @yield('content')
             </div>
