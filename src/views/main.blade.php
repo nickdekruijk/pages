@@ -64,7 +64,7 @@
             </div>
         </nav>
         <section class="content">
-            <div class="bigimg" style="background-image:url('//picsum.photos/1500/500/')"></div>
+            <div class="bigimg" style="background-image:url('{{ asset('media/'.$page->image()) }}')"></div>
             <div class="container mw-1140">
                 @yield('content')
             </div>

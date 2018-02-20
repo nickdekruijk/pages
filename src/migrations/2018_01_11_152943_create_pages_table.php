@@ -28,7 +28,7 @@ class CreatePagesTable extends Migration
             $table->string('slug', 100)->nullable();
             $table->text('description')->nullable();
             $table->date('date')->nullable();
-            $table->longText('pictures')->nullable();
+            $table->longText('images')->nullable();
             $table->string('background')->nullable();
             $table->string('video_id', 100)->nullable();
             $table->longText('body')->nullable();

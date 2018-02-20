@@ -3,9 +3,11 @@
 namespace LaraPages\Pages;
 
 use Illuminate\Database\Eloquent\Model;
+use LaraPages\Pages\Images;
 
 class Page extends Model
 {
+    use Images;
 
     protected $casts = [
         'active' => 'boolean',
