@@ -29,7 +29,7 @@ class PageController extends Controller
     private $baseUrl = null;
     private $segments = null;
 
-    private function parseSegments()
+    public function parseSegments()
     {
         $this->segments = Request::segments();
         # Check if first segment matches a language
@@ -75,7 +75,7 @@ class PageController extends Controller
     }
 
     // The walk() function is used by the route() method to parse the pages tree array
-    private function walk($parent = 0, $depth = 0, $segments = false, $url = '/', $hidden = false, $activeParent = true)
+    public function walk($parent = 0, $depth = 0, $segments = false, $url = '/', $hidden = false, $activeParent = true)
     {
         // The id might not exist if it's the domain root for example
         if (!isset($segments[$depth])) {
@@ -103,7 +103,7 @@ class PageController extends Controller
         if (!$hidden) $this->nav .= '</ul>';
     }
 
-    private function getTree()
+    public function getTree()
     {
         foreach(Page::where('active', 1)->orderBy('sort')->get() as $page) {
             $this->tree[$page->parent?:0][$page->id] = $page;
