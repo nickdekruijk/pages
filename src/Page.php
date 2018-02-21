@@ -31,4 +31,10 @@ class Page extends Model
     {
         return $value ?: $this->title . ' - ' . env('APP_NAME');
     }
+
+    // If empty set head based on title
+    public function getHeadAttribute($value)
+    {
+        return $value ?: $this->title;
+    }
 }
