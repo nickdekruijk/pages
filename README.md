@@ -12,18 +12,48 @@ To install the package use
 
 `composer require nickdekruijk/pages`
 
-## Configuration
-After installing for the first time publish the config file with 
+## Usage
+First of all let Laravel generate a Page model, migration and PageController using
+`php artisan make:model -cm Page`
+Open the new controller file at `app/Http/Controllers/PageController.php` and let it extend \NickDeKruijk\Pages\PageController
+```php
+class PageController extends \NickDeKruijk\Pages\PageController
+```
+Open the new model file at `app/Page.php` file and let it extend \NickDeKruijk\Pages\Page
+```php
+class Page extends \NickDeKruijk\Pages\Page
+```
+Open the migration file at `database/migrations/yyyy_mm_dd_hhmmss_create_pages_table.php` and add something like this between the default $table->increments('id') and $table->timestamps() lines:
+```php
+            $table->integer('parent')->nullable()->unsigned();
+            $table->boolean('active')->default(1);
+            $table->boolean('menuitem')->default(1);
+            $table->boolean('home')->default(0);
+            $table->string('view', 100)->nullable();
+            $table->string('title');
+            $table->string('head')->nullable();
+            $table->string('html_title', 65)->nullable();
+            $table->string('keywords')->nullable();
+            $table->string('slug', 100)->nullable();
+            $table->text('description')->nullable();
+            $table->date('date')->nullable();
+            $table->longText('images')->nullable();
+            $table->string('background')->nullable();
+            $table->string('video_id', 100)->nullable();
+            $table->longText('body')->nullable();
+            $table->integer('sort')->default(0)->unsigned();
 
-`php artisan vendor:publish --tag=config --provider="NickDeKruijk\Pages\ServiceProvider"` 
+            $table->softDeletes();
 
-A default config file called `pages.php` will be available in your Laravel `app/config` folder. See this file for more details.
+            $table->index(['active', 'parent', 'sort']);
+            $table->foreign('parent')->references('id')->on('pages');
+```
 
 ### Run Migration
 You need to run `php artisan migrate` to create the pages table.
 
 ### Add Routes
-Add `Page::routes();` to your `routes/web.php` file.
+Add `Route::get('{any}', 'PageController@route')->where('any', '(.*)');` to your `routes/web.php` file.
 
 ### Dummy data
 You can add some sample pages by running `php artisan db:seed --class=NickDeKruijk\\Pages\\PageSeeder`.
