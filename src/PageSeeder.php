@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraPages\Pages;
+namespace NickDeKruijk\Pages;
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;

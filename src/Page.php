@@ -1,9 +1,9 @@
 <?php
 
-namespace LaraPages\Pages;
+namespace NickDeKruijk\Pages;
 
 use Illuminate\Database\Eloquent\Model;
-use LaraPages\Pages\Images;
+use NickDeKruijk\Pages\Images;
 
 class Page extends Model
 {

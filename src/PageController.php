@@ -1,5 +1,5 @@
 <?php
-namespace LaraPages\Pages;
+namespace NickDeKruijk\Pages;
 
 use App\Http\Controllers\Controller;
 use Route;
@@ -13,7 +13,7 @@ class PageController extends Controller
     // Add the routes, called from Page::routes() facade
     public static function routes()
     {
-        Route::get('{any}', '\LaraPages\Pages\PageController@route')->where('any', '(.*)');
+        Route::get('{any}', '\NickDeKruijk\Pages\PageController@route')->where('any', '(.*)');
     }
 
     // This array will store all pages store with parent as key

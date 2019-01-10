@@ -53,7 +53,7 @@
     <body>
         <input type="checkbox" id="nav-toggle">
         <nav class="nav" role="navigation" aria-label="main navigation" class="nav" id="nav">
-            <a class="nav-logo" href="/">LaraPages</a>
+            <a class="nav-logo" href="/">Demo Page</a>
             <label class="nav-burger" for="nav-toggle">
                 <span></span>
                 <span></span>
@@ -73,8 +73,8 @@
         </section>
         <footer class="footer">
             <div class="container mw-1140">
-                &copy; {{ date('Y') }} <a href="https://larapages.nl">LaraPages</a>
-                <a class="right" target="_blank" href="https://github.com/larapages">Visit us on GitHub</a>
+                &copy; {{ date('Y') }} <a href="https://nickdekruijk.nl">Nick de Kruijk</a>
+                <a class="right" target="_blank" href="https://github.com/nickdekruijk">Visit us on GitHub</a>
             </div>
         </footer>
     </body>
