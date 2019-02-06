@@ -12,12 +12,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/views', 'pages');
-
-/*
-        if (config('pages.migration')) {
-            $this->loadMigrationsFrom(__DIR__.'/migrations/');
-        }
-*/
     }
 
     /**
