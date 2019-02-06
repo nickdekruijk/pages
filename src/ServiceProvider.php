@@ -12,6 +12,11 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/views', 'pages');
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                UserCommand::class,
+            ]);
+        }
     }
 
     /**
