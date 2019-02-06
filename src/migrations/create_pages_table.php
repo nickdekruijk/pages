@@ -13,7 +13,7 @@ class CreatePagesTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('pages.table', 'pages'), function (Blueprint $table) {
+        Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('parent')->nullable()->unsigned();
@@ -49,6 +49,6 @@ class CreatePagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('pages.table', 'pages'));
+        Schema::dropIfExists('pages');
     }
 }
