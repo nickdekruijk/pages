@@ -1,6 +1,6 @@
 <?php
 
-namespace NickDeKruijk\Pages;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use NickDeKruijk\Admin\Images;

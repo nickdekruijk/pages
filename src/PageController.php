@@ -1,7 +1,7 @@
 <?php
-namespace NickDeKruijk\Pages;
 
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
+
 use Route;
 use Request;
 use App\Http\Requests;
