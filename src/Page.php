@@ -3,7 +3,7 @@
 namespace NickDeKruijk\Pages;
 
 use Illuminate\Database\Eloquent\Model;
-use NickDeKruijk\Pages\Images;
+use NickDeKruijk\Admin\Images;
 
 class Page extends Model
 {
