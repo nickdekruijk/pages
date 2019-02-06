@@ -12,14 +12,14 @@ class UserCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'pages:install {--model=Page : Model name} {--table=pages : Table name for migration} {--controller=PageController : Controller name} {--force : Overwrite files if they exist}';
+    protected $signature = 'pages:install {--model=Page : Model name (only changes filename, you need to change the class name inside the php file yourself)} {--table=pages : Table name for migration (only changes filename, you need to change the class and table name inside the php file yourself)} {--controller=PageController : Controller name (only changes filename, you need to change the class name inside the php file yourself)} {--force : Overwrite files if they exist}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Create a Page model, migration and controller by copying them from the package to the appropriate Laravel location.\n\n  Warning: Changing default values only changes filenames, you must change the class/table names inside the php files yourself.";
+    protected $description = "Create a Page model, pages table migration and PageController";
 
     /**
      * Execute the console command.
