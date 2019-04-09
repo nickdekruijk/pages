@@ -29,7 +29,7 @@ class Page extends Model
     // If empty set html_title based on title and APP_NAME
     public function getHtmlTitleAttribute($value)
     {
-        return $value ?: $this->title . ' - ' . env('APP_NAME');
+        return $value ?: $this->title . ' - ' . config('app.name');
     }
 
     // If empty set head based on title
