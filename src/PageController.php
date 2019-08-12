@@ -113,18 +113,30 @@ class PageController extends Controller
         }
     }
 
-    public function url(Page $page)
+    public function getPage($id)
     {
+        return $this->tree[$this->tree['parents'][$id]][$id];
+    }
+
+    public function url($page)
+    {
+        if (is_numeric($page)) {
+            $page = $this->getPage($page);
+        }
         $fullUrl = $page->slug;
         if ($page->parent > 0) {
             $parent = $this->tree['parents'][$page->id];
             while($parent > 0) {
-                $fullUrl = $this->tree['slugs'][$parent] . '/' . $fullUrl;
-                $parent = $this->tree['parents'][$parent];
+                if (isset($this->tree['slugs'][$parent])) {
+                    $fullUrl = $this->tree['slugs'][$parent] . '/' . $fullUrl;
+                    $parent = $this->tree['parents'][$parent];
+                } else {
+                    return false;
+                }
             }
             return url($fullUrl);
         } else {
-            return $page->slug;
+            return url($page->slug);
         }
     }
 
