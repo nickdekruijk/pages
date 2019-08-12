@@ -37,4 +37,10 @@ class Page extends Model
     {
         return $value ?: $this->title;
     }
+
+    // Set default view for a page if left empty
+    public function getViewAttribute($value)
+    {
+        return $value ?: 'page';
+    }
 }

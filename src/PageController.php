@@ -146,9 +146,6 @@ class PageController extends Controller
             abort(404);
         }
 
-        if (!$this->current->view) {
-            !$this->current->view = config('pages.default_view', 'pages::page');
-        }
 //         if (!View::exists($this->current->view)) $this->current->view=$this->current->children()->activeSorted()->count()?'pages':'detail';
 		return view($this->current->view, ['page' => $this->current, 'PageController' => $this]);
     }
