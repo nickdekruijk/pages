@@ -20,9 +20,6 @@
         "nickdekruijk/minify": "^2.1",
         "nickdekruijk/settings": "^1.1"
     },
-    "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.2"
-    },
     "extra": {
         "laravel": {
             "providers": [
