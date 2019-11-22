@@ -12,7 +12,17 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=7.2.0",
+        "arcanedev/laravel-lang": "^7.0",
+        "components/jquery": "^3.4",
+        "doctrine/dbal": "^2.9",
+        "laravel/helpers": "^1.1",
+        "nickdekruijk/admin": "^1.3",
+        "nickdekruijk/minify": "^2.1",
+        "nickdekruijk/settings": "^1.1"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2"
     },
     "extra": {
         "laravel": {

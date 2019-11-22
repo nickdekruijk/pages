@@ -1,0 +1,126 @@
+/*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+/* Default font */
+body {font-family:BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+
+/* Font smoothening */
+.smooth {-webkit-font-smoothing:antialiased;-moz-font-smoothing:grayscale;-moz-osx-font-smoothing:grayscale}
+
+/* Don't underline links by default */
+A {text-decoration:none}
+.underline, .h\:underline:hover, .a-underline A, .h\:a-underline A:hover {text-decoration:underline}
+
+/* Disable text selecting */
+.no-select {-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:moz-none;-ms-user-select:none;user-select:none}
+
+/* Overflow */
+.o-hidden {overflow:hidden}
+.o-auto {overflow:auto}
+.o-scroll {overflow:scroll}
+
+/* Text overflow / wrapping */
+.nowrap {white-space:nowrap}
+.ellipsis {white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* Flexbox */
+.flex {display:-webkit-box;display:-ms-flexbox;display:flex}
+
+.flex-row {flex-direction:row}
+.flex-rrow {flex-direction:row-reverse}
+.flex-column {flex-direction:column}
+.flex-rcolumn {flex-direction:column-reverse}
+
+.flex-nowrap {flex-wrap:nowrap}
+.flex-wrap {flex-wrap:wrap}
+.flex-rwrap {flex-wrap:wrap-reverse}
+
+.flex-jc-start {justify-content:flex-start} /* Default */
+.flex-jc-end {justify-content:flex-end}
+.flex-jc-center {justify-content:center}
+.flex-jc-space-between {justify-content:space-between}
+.flex-jc-space-around {justify-content:space-around}
+.flex-jc-space-evenly {justify-content:space-evenly}
+
+.flex-ai-start {align-items:flex-start}
+.flex-ai-end {align-items:flex-end}
+.flex-ai-center {align-items:center}
+.flex-ai-baseline {align-items:baseline}
+.flex-ai-stretch {align-items:stretch} /* Default */
+
+.flex-ac-start {align-content:flex-start}
+.flex-ac-end {align-content:flex-end}
+.flex-ac-center {align-content:center}
+.flex-ac-space-between {align-content:space-between}
+.flex-ac-space-around {align-content:space-around}
+.flex-ac-space-stretch {align-content:stretch} /* Default */
+
+.order-1{order:1} .order-2{order:2} .order-3{order:3} .order-4{order:4} .order-5{order:5}
+.-order-1{order:-1} .-order-2{order:-2} .-order-3{order:-3} .-order-4{order:-4} .-order-5{order:-5}
+
+.flex-nogrow, .flex-grow-0{flex-grow:0}
+.flex-grow, .flex-grow-1{flex-grow:1} .flex-grow-2{flex-grow:2} .flex-grow-2{flex-grow:3} .flex-grow-4{flex-grow:4} .flex-grow-5{flex-grow:5}
+
+.flex-noshrink {flex-shrink:0}
+.flex-shrink {flex-shrink:1}
+
+.flex-basis-0 {flex-basis:0}
+.flex-basis-auto {flex-basis:auto}
+
+.flex-as-auto {align-self:auto} /* Default */
+.flex-as-start {align-self:flex-start}
+.flex-as-end {align-self:flex-end}
+.flex-as-center {align-self:center}
+.flex-as-baseline {align-self:baseline}
+.flex-as-stretch {align-self:stretch}
+
+/* Floating elements */
+.f-left {float:left}
+.f-right {float:right}
+.c-both {clear:both}
+.c-left {clear:left}
+.c-right {clear:right}
+
+/* ClearFix child floating elements */
+.cf:after {content:'';display:block;clear:both}
+
+/* Positioning */
+.relative {position:relative}
+.absolute {position:absolute}
+.fixed {position:fixed}
+.sticky {position:sticky;position:-webkit-sticky}
+.top {top:0}
+.right {right:0}
+.bottom {bottom:0}
+.left {left:0}
+
+/* Fill element */
+.fill {position:absolute;top:0;right:0;bottom:0;left:0;display:block}
+
+/* Vertical align */
+.v-align {position:absolute;top:50%;transform:translateY(-50%)}
+
+/* Display Blocks */
+.hidden {display:none}
+.block {display:block}
+.inline-block {display:inline-block}
+.inline {display:inline}
+
+/* Background images */
+.bg-cover {background-size:cover}
+.bg-contain {background-size:contain}
+.bg-norepeat {background-repeat:no-repeat}
+.bg-top {background-position:top}
+.bg-right {background-position:right}
+.bg-bottom {background-position:bottom}
+.bg-left {background-position:left}
+.bg-center {background-position:center center}
+
+/* Text alignment */
+.ta-center {text-align:center}
+.ta-left {text-align:left}
+.ta-right {text-align:right}
+.ta-justify {text-align:justify}
+
+/* Font styles */
+.bold {font-weight:bold}
+.italic {font-style:italic}

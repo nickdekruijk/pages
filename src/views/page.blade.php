@@ -1,4 +1,4 @@
-@extends('pages::main')
+@extends('main')
 
 @section('content')
     <article class="article">
