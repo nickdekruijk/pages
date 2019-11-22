@@ -13,7 +13,7 @@
         <input type="checkbox" id="nav-toggle">
         <nav class="nav" aria-label="main navigation" id="nav">
             <div class="max-width">
-                <a href="/"><img class="nav-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" alt="Demo Page"></a>
+                <a href="/"><img class="nav-logo" alt="Logo"></a>
                 <label class="nav-burger" for="nav-toggle">
                     <span></span>
                     <span></span>
@@ -22,15 +22,17 @@
                 {!! isset($PageController) ? $PageController->nav : Page::navigation() !!}
             </div>
         </nav>
-        <section class="content">
-            @yield('content')
-        </section>
-        <footer class="footer">
-            <div class="container mw-1140">
-                &copy; {{ date('Y') }} <a href="https://nickdekruijk.nl">Nick de Kruijk</a>
-                <a class="right" target="_blank" href="https://github.com/nickdekruijk">Visit me on GitHub</a>
-            </div>
-        </footer>
+        <div class="flex has-footer">
+            <section class="content">
+                @yield('content')
+            </section>
+            <footer class="footer">
+                <div class="max-width">
+                    &copy; {{ date('Y') }} <a href="https://nickdekruijk.nl">Nick de Kruijk</a>
+                    <a class="right" target="_blank" href="https://github.com/nickdekruijk">Visit me on GitHub</a>
+                </div>
+            </footer>
+        </div>
         {!! Minify::javascript(['../resources/js/scripts.js']) !!}
     </body>
 </html>
