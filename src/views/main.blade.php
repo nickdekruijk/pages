@@ -7,8 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="{{ @$page->description }}">
     	<title>{{ @$page->html_title }}</title>
-    	{{--!! Minify::stylesheet(['/../resources/css/utility.css', '/../resources/css/styles.css']) !!--}}
-    	{!! Minify::stylesheet(['../resources/css/utility.css', '../vendor/nickdekruijk/pages/src/views/styles.css']) !!}
+    	{!! Minify::stylesheet(['../resources/css/utility.css', '../resources/css/styles.css']) !!}
     </head>
     <body class="smooth">
         <input type="checkbox" id="nav-toggle">
