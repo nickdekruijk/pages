@@ -14,7 +14,6 @@
     "require": {
         "php": ">=7.2.0",
         "arcanedev/laravel-lang": "^7.0",
-        "components/jquery": "^3.4",
         "doctrine/dbal": "^2.9",
         "laravel/helpers": "^1.1",
         "nickdekruijk/admin": "^1.3",
