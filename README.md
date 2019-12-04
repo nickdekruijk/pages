@@ -12,6 +12,10 @@ After a clean Laravel 6.x installation and configuring your database install the
 
 `composer require --dev nickdekruijk/pages`
 
+Depending on your project you may need some or all of these packages too (remove what you don't need):
+
+`composer require nickdekruijk/admin nickdekruijk/settings nickdekruijk/minify doctrine/dbal laravel/helpers arcanedev/laravel-lang`
+
 Then run the following command to create a Page model, PageController, migration and media folder. Add `-h` to see more options on how to change the default names.
 
 `php artisan pages:install`

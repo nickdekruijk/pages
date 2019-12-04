@@ -12,22 +12,13 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.2.0",
-        "arcanedev/laravel-lang": "^7.0",
-        "doctrine/dbal": "^2.9",
-        "laravel/helpers": "^1.1",
-        "nickdekruijk/admin": "^1.3",
-        "nickdekruijk/minify": "^2.1",
-        "nickdekruijk/settings": "^1.1"
+        "php": ">=7.2.0"
     },
     "extra": {
         "laravel": {
             "providers": [
                 "NickDeKruijk\\Pages\\ServiceProvider"
-            ],
-            "aliases": {
-                "Page": "NickDeKruijk\\Pages\\Facade"
-            }
+            ]
         }
     },
     "autoload": {
