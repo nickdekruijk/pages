@@ -78,20 +78,20 @@ class PageController extends Controller
         }
 
         if (!$hidden) $this->nav .= '<ul class="nav' . $depth . '">';
-        foreach($this->tree[$parent] as $n => $page) {
+        foreach ($this->tree[$parent] as $n => $page) {
             $hide = !$page->menuitem || $hidden;
             // Set current if it's the one but only if $activeParent is true to prevent page with same slug from different parent
-            if (((empty($segments[$depth]) && $depth==0 && $n==0) || $segments[$depth] == $page->slug) && $activeParent) {
+            if (((empty($segments[$depth]) && $depth == 0 && $n == 0) || $segments[$depth] == $page->slug) && $activeParent) {
                 $this->current = $page;
                 $active = true;
             } else {
                 $active = false;
             }
 
-            if (!$hide) $this->nav .= '<li' . ($active?' class="active"':''). '>';
-            if (!$hide) $this->nav .= '<a href="' . url($url . ($this->translate?$page->trans('slug'):$page->slug)) .'">' . ($this->translate?$page->trans('title'):$page->title) . '</a>';
+            if (!$hide) $this->nav .= '<li' . ($active ? ' class="active"' : '') . '>';
+            if (!$hide) $this->nav .= '<a href="' . url($url . ($this->translate ? $page->trans('slug') : $page->slug)) . '">' . ($this->translate ? $page->trans('title') : $page->title) . '</a>';
             if (isset($this->tree[$page->id])) {
-                $this->walk($page->id, $depth+1, $segments, $url . ($this->translate?$page->trans('slug'):$page->slug) . '/', $hide, $active);
+                $this->walk($page->id, $depth + 1, $segments, $url . ($this->translate ? $page->trans('slug') : $page->slug) . '/', $hide, $active);
             }
             if (!$hide) $this->nav .= '</li>';
         }
@@ -100,9 +100,9 @@ class PageController extends Controller
 
     public function getTree()
     {
-        foreach(Page::where('active', 1)->orderBy('sort')->get() as $page) {
-            $this->tree[$page->parent?:0][$page->id] = $page;
-            $this->tree['parents'][$page->id] = (int)$page->parent?:0;
+        foreach (Page::where('active', 1)->orderBy('sort')->get() as $page) {
+            $this->tree[$page->parent ?: 0][$page->id] = $page;
+            $this->tree['parents'][$page->id] = (int) $page->parent ?: 0;
             $this->tree['slugs'][$page->id] = $page->slug;
         }
     }
@@ -120,7 +120,7 @@ class PageController extends Controller
         $fullUrl = $page->slug;
         if ($page->parent > 0) {
             $parent = $this->tree['parents'][$page->id];
-            while($parent > 0) {
+            while ($parent > 0) {
                 if (isset($this->tree['slugs'][$parent])) {
                     $fullUrl = $this->tree['slugs'][$parent] . '/' . $fullUrl;
                     $parent = $this->tree['parents'][$parent];
@@ -145,13 +145,13 @@ class PageController extends Controller
         $this->getTree();
 
         // Start walking the pages tree
-        $this->walk(0, 0, $this->segments(), $this->baseUrl().'/');
+        $this->walk(0, 0, $this->segments(), $this->baseUrl() . '/');
 
         // If current isn't set raise a 404
         if (!$this->current) {
             abort(404);
         }
 
-		return view($this->current->view, ['page' => $this->current, 'PageController' => $this]);
+        return view($this->current->view, ['page' => $this->current, 'PageController' => $this]);
     }
 }

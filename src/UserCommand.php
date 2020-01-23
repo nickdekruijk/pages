@@ -51,7 +51,7 @@ class UserCommand extends Command
         $migrationFile = 'migrations/' . date('Y_m_d_His') . '_create_' . $this->option('table') . '_table.php';
         // Check if there is a create_pages_table migration already, if so, use that as migration name
         $migrationDir = opendir(database_path('migrations'));
-        while($file = readdir($migrationDir)) {
+        while ($file = readdir($migrationDir)) {
             if (substr($file, 18) == 'create_' . $this->option('table') . '_table.php') {
                 $migrationFile = 'migrations/' . $file;
             }
@@ -95,6 +95,5 @@ class UserCommand extends Command
         $this->deleteFile('resources/sass/app.scss');
         $this->deleteFile('resources/views/welcome.blade.php');
         @rmdir(base_path('resources/sass/'));
-
     }
 }
