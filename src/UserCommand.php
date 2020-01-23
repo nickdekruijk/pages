@@ -69,7 +69,7 @@ class UserCommand extends Command
             mkdir(base_path('resources/css'));
         }
         $this->copyFile('views/utility.css', 'resources/css/utility.css');
-        $this->copyFile('views/styles.css', 'resources/css/styles.css');
+        $this->copyFile('views/styles.scss', 'resources/css/styles.scss');
         $this->copyFile('views/scripts.js', 'resources/js/scripts.js');
         $this->copyFile('config.php', 'config/admin.php', 'vendor/nickdekruijk/admin/src/');
 
