@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use NickDeKruijk\Admin\Images;
+use Illuminate\Support\Str;
 
 class Page extends Model
 {
@@ -23,7 +24,7 @@ class Page extends Model
         if ($value == '/') {
             return '';
         }
-        return $value ?: str_slug($this->title);
+        return $value ?: Str::slug($this->title);
     }
 
     // If empty set html_title based on title and APP_NAME
