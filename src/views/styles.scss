@@ -1,13 +1,17 @@
 // Colors
+$black: #000;
 $white: #fff;
 $grey: #ccc;
+$red: #c33;
 $shadow: rgba(0,0,0,0.5) 0 0 10px;
 
 // Navigation
-.nav {position:fixed;top:0;right:0;left:0;box-shadow:$shadow;background-color:$white;text-align:right;padding:5px 0;height:50px}
-.nav-logo {height:40px;float:left;display:block}
+.nav {position:fixed;top:0;right:0;left:0;box-shadow:$shadow;background-color:$white;text-align:right;height:100px;z-index:1000}
+.nav-logo {height:60px;float:left;display:block;margin-top:20px;z-index:1001;position:relative}
 .nav0 > LI {display:inline-block;font-size:20px}
-.nav0 > LI > A {display:block;padding:10px;color:inherit}
+.nav0 > LI > A {display:block;padding:10px;margin-top:50px;color:inherit}
+.nav0 > LI.active > A,
+.nav0 > LI:hover > A {color:$grey}
 
 // Global
 A {color:inherit}
@@ -15,7 +19,7 @@ A {color:inherit}
 // Content
 .max-width {max-width:1140px;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px}
 .has-footer {flex-direction:column;min-height:100vh}
-.content {padding-top:50px;flex:1}
+.content {padding-top:100px;flex:1}
 
 // Article
 .article {padding-top:20px;padding-bottom:20px}
@@ -27,3 +31,22 @@ A {color:inherit}
 
 // Responsive
 #nav-toggle {display:none}
+@media (max-width:750px) {
+    .nav {height:50px}
+    .nav-logo {height:40px;margin-top:5px}
+    .nav0 {position:fixed;background-color:$white;left:0;right:0;top:0;padding-top:50px;z-index:1000;padding-bottom:10px;transform:translateY(-100%);transition:transform .4s}
+    .nav0 > LI {display:block;font-size:20px}
+    .nav0 > LI > A {margin:0;padding:10px 20px;text-align:center}
+    .content {padding-top:50px}
+    .nav-burger {position:absolute;right:0;padding:22px 52px 28px 15px;top:0px;width:30px;display:block;z-index:1001}
+    .nav-burger > SPAN {display:block;width:32px;background-color:$black;height:4px;border-radius:4px;position:absolute;transition:transform .4s, background-color .4s}
+    .nav-burger > SPAN:nth-child(1) {transform:translateY(-9px)}
+    .nav-burger > SPAN:nth-child(3) {transform:translateY(9px)}
+    #nav-toggle:checked + .nav .nav-burger > SPAN {background-color:$red}
+    #nav-toggle:checked + .nav .nav-burger > SPAN:nth-child(1) {transform:rotate(45deg)}
+    #nav-toggle:checked + .nav .nav-burger > SPAN:nth-child(2) {transform:scale(0)}
+    #nav-toggle:checked + .nav .nav-burger > SPAN:nth-child(3) {transform:rotate(-45deg)}
+    #nav-toggle:checked + .nav .nav0 {transform:translateY(0);box-shadow:rgba(0,0,0,0.5) 0 0 10px}
+    #nav-toggle ~ .flex {transition:transform .4s}
+    #nav-toggle:checked ~ .flex {transform:translateY(50px)}
+}
